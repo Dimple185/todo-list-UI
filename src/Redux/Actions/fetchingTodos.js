@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 import { FETCHING_TODOS, UPDATE_TODO_MODE, UPDATE_TODOS, CHECK_TODO } from "../types/actionTypes";
 import axios from 'axios';
+=======
+import { FETCHING_TODOS } from "../types/actionTypes";
+>>>>>>> 69a9addcf8df5a605da8890a9201de3c67009920
 
 export const fetchTodo = (userId) => {
   return (dispatch) => {
@@ -8,7 +12,11 @@ export const fetchTodo = (userId) => {
 };
 
 export const fetchItems = (userId) => {
+<<<<<<< HEAD
   //   const userId = JSON.parse(localStorage.getItem("userData"))?.user?._id;
+=======
+//   const userId = JSON.parse(localStorage.getItem("userData"))?.user?._id;
+>>>>>>> 69a9addcf8df5a605da8890a9201de3c67009920
   return (dispatch) => {
     return axios
       .get(`http://localhost:8000/api/todos/${userId}`)
@@ -23,6 +31,7 @@ export const fetchItems = (userId) => {
       });
   };
 };
+<<<<<<< HEAD
 
 export const updateCurrentTodo = (currentTodoIndex) => {
   return (dispatch) => {
@@ -55,3 +64,5 @@ export const checkItem = (checkTodo) => {
       });
   };
 };
+=======
+>>>>>>> 69a9addcf8df5a605da8890a9201de3c67009920

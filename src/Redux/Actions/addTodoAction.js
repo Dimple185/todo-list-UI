@@ -4,6 +4,11 @@ import {
   DELETE_TODOS,
   DELETE_TODOS_SUCCESS,
   UPDATE_TODOS,
+<<<<<<< HEAD
+=======
+  UPDATE_TODOS_SUCCESS,
+  UPDATE_TODO_MODE,
+>>>>>>> 69a9addcf8df5a605da8890a9201de3c67009920
 } from "../types/actionTypes";
 import axios from "axios";
 import { FETCHING_TODOS } from "../types/actionTypes";
@@ -22,11 +27,26 @@ export const deleteTodo = (userId) => {
   };
 };
 
+<<<<<<< HEAD
 // export const updateCurrentTodo = (currentTodoIndex) => {
 //   return (dispatch) => {
 //     dispatch({ type: UPDATE_TODO_MODE, payload: currentTodoIndex });
 //   };
 // };
+=======
+
+export const updateCurrentTodo = (currentTodoId) => {
+  return (dispatch) => {
+    dispatch({ type: UPDATE_TODO_MODE, payload: currentTodoId });
+  };
+};
+
+export const updateTodo = (text) => {
+  return (dispatch) => {
+    dispatch({type: UPDATE_TODOS, payload: text})
+  }
+}
+>>>>>>> 69a9addcf8df5a605da8890a9201de3c67009920
 
 export const addItem = (currentTodo) => {
   return (dispatch) => {
@@ -67,6 +87,7 @@ export const deleteItem = (id) => {
 
 export const checkItem = (currentTodo) => {
   return (dispatch) => {
+<<<<<<< HEAD
     return axios
       .put(`http://localhost:8000/api/todos/update`, currentTodo)
       .then((res) => {
@@ -76,5 +97,14 @@ export const checkItem = (currentTodo) => {
           payload: res.data,
         });
       });
+=======
+    return axios.put(`http://localhost:8000/api/todos/update`,currentTodo).then((res) => {
+      console.log(res.data);
+      dispatch({
+        type: UPDATE_TODOS_SUCCESS,
+        payload: res.data,
+      });
+    });
+>>>>>>> 69a9addcf8df5a605da8890a9201de3c67009920
   };
 };
